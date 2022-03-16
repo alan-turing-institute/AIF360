@@ -178,7 +178,7 @@ class RejectOptionClassification(Transformer):
             dataset_pred (BinaryLabelDataset): Output dataset with potentially
             fair predictions obtain using the ROC method.
         """
-        dataset_new = dataset.copy(deepcopy=False)
+        dataset_new = dataset.copy(deep=False)
 
         fav_pred_inds = (dataset.scores > self.classification_threshold)
         unfav_pred_inds = ~fav_pred_inds
